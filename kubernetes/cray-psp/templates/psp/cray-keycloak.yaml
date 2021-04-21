@@ -1,0 +1,26 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: keycloak-setup-psp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: restricted-transition-net-raw-psp
+subjects:
+- kind: ServiceAccount
+  name: keycloak-setup
+  namespace: services
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: keycloak-users-localize-psp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: restricted-transition-net-raw-psp
+subjects:
+- kind: ServiceAccount
+  name: keycloak-users-localize
+  namespace: services

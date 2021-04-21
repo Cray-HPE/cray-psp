@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: sma-default-psp
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: "sma"
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: restricted-transition-net-raw-psp
