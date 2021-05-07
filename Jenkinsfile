@@ -1,4 +1,4 @@
-@Library("dst-shared@release/shasta-1.4") _
+@Library('dst-shared@master') _
 
 pipeline {
 
@@ -13,7 +13,7 @@ pipeline {
 
     stage('Package') {
       steps {
-        packageHelmCharts(chartsPath: "${env.WORKSPACE}/stable",
+        packageHelmCharts(chartsPath: "${env.WORKSPACE}/kubernetes",
                           buildResultsPath: "${env.WORKSPACE}/build/results",
                           buildDate: "${env.BUILD_DATE}")
       }
@@ -21,9 +21,28 @@ pipeline {
 
     stage('Publish') {
       steps {
-        publishHelmCharts(chartsPath: "${env.WORKSPACE}/stable")
+        publishHelmCharts(chartsPath: "${env.WORKSPACE}/kubernetes")
       }
     }
+
+    /* Since this is temporary and being removed in 1.6 I'm not sure
+       We should be including it in github.
+    stage('Push to github') {
+        when { allOf {
+            expression { BRANCH_NAME ==~ /(release\/.*|master)/ }
+        }}
+        steps {
+            script {
+                pushToGithub(
+                    githubRepo: "Cray-HPE/cray-psp",
+                    pemSecretId: "githubapp-stash-sync",
+                    githubAppId: "91129",
+                    githubAppInstallationId: "13313749"
+                )
+            }
+        }
+    }
+    */
 
   }
 
