@@ -1,6 +1,19 @@
 apiVersion: v2
 name: cray-psp
-description: A Helm chart applying net-raw psp
-type: application
 version: 0.1.2
+description: A Helm chart applying net-raw psp
+keywords:
+  - cray-psp
+home: https://github.com/Cray-HPE/cray-psp  
+type: application
 appVersion: 1.0.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: security
+      description: Updated images to CSM patched versions
+      links:
+        - name: Github Issue
+          url: https://github.com/Cray-HPE/cray-psp/issues/2
+        - name: Github PR
+          url: https://github.com/Cray-HPE/cray-psp/pull/3
+  artifacthub.io/license: MIT
