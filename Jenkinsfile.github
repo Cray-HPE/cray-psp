@@ -12,7 +12,7 @@ pipeline {
 
     environment {
         NAME = "cray-psp"
-        DESCRIPTION = "Helm chart to deploy node-problem-detector to Cray system."
+        DESCRIPTION = "Deploys resources to set up PSP in the Cray Kubernetes cluster."
         IS_STABLE = getBuildIsStable()
     }
 
