@@ -32,8 +32,8 @@ test:
 		cray-psp
 
 package:
-ifdef CHART_VERSIONS
-	CMD="package charts/cray-psp --version $(word 1, $(CHART_VERSIONS)) -d packages" $(MAKE) helm
+ifdef CHART_VERSION
+	CMD="package charts/cray-psp --version $(CHART_VERSION) -d packages" $(MAKE) helm
 else
 	CMD="package charts/* -d packages" $(MAKE) helm
 endif

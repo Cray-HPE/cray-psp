@@ -19,7 +19,7 @@ pipeline {
     stages {
         stage("Build") {
             environment {
-                CHART_VERSIONS = getChartVersion(name: "cray-psp",   chartDirectory: "charts", isStable: env.IS_STABLE)
+                CHART_VERSION = getChartVersion(name: "cray-psp", chartDirectory: "charts", isStable: env.IS_STABLE)
             }
             steps {
                 sh "make"
