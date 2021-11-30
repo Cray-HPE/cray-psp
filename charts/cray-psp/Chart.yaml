@@ -7,6 +7,5 @@ keywords:
 home: https://github.com/Cray-HPE/cray-psp
 maintainers:
   - name: kburns-hpe
-  - name: brantk-hpe
 annotations:
   artifacthub.io/license: MIT
