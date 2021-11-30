@@ -1,0 +1,11 @@
+apiVersion: v2
+name: cray-psp
+version: 0.2.0
+description: Apply net-raw PSP
+keywords:
+  - cray-psp
+home: https://github.com/Cray-HPE/cray-psp
+maintainers:
+  - name: kburns-hpe
+annotations:
+  artifacthub.io/license: MIT
