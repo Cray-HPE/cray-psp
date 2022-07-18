@@ -23,7 +23,7 @@
 #
 apiVersion: v2
 name: cray-psp
-version: 0.4.0
+version: 0.4.1
 description: Apply net-raw PSP
 keywords:
   - cray-psp
