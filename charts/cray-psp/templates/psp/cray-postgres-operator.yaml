@@ -24,3 +24,12 @@ subjects:
 - kind: ServiceAccount
   name: postgres-pod
   namespace: services
+- kind: ServiceAccount
+  name: postgres-pod
+  namespace: spire
+- kind: ServiceAccount
+  name: postgres-pod
+  namespace: argo
+- kind: ServiceAccount
+  name: postgres-pod
+  namespace: sma
