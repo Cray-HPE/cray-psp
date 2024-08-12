@@ -9,8 +9,11 @@ roleRef:
   name: restricted-transition-net-raw-psp
 subjects:
 - kind: ServiceAccount
-  name: cray-vpa-recommender
+  name: cray-vpa
   namespace: services
-- kind: ServiceAccount
-  name: cray-vpa-updater
-  namespace: services
+# - kind: ServiceAccount
+#   name: cray-vpa-recommender
+#   namespace: services
+# - kind: ServiceAccount
+#   name: cray-vpa-updater
+#   namespace: services
