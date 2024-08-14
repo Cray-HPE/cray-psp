@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: cray-vpa-psp
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: restricted-transition-net-raw-psp
+subjects:
+- kind: ServiceAccount
+  name: cray-vpa-recommender
+  namespace: services
+- kind: ServiceAccount
+  name: cray-vpa-updater
+  namespace: services
